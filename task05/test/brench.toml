@@ -1,0 +1,7 @@
+extract = 'result: (\w+)'
+
+[runs.test]
+pipeline = [
+    "bril2json",
+    "(cd .. && python3 -m test.test)",
+]
