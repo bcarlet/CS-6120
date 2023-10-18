@@ -22,7 +22,8 @@ def main():
     df = df.groupby('suite').agg(
         min=pd.NamedAgg('speedup', 'min'),
         max=pd.NamedAgg('speedup', 'max'),
-        mean=pd.NamedAgg('speedup', gmean)
+        mean=pd.NamedAgg('speedup', gmean),
+        stdev=pd.NamedAgg('speedup', 'std')
     )
 
     df.to_markdown(sys.stdout)
