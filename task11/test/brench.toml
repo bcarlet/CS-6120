@@ -1,0 +1,14 @@
+extract = 'total_dyn_inst: (\d+)'
+
+[runs.baseline]
+pipeline = [
+    "bril2json",
+    "brili -p {args}",
+]
+
+[runs.rc]
+pipeline = [
+    "bril2json",
+    "python3 nofree.py",
+    "deno run ../brili.ts -p {args}",
+]
